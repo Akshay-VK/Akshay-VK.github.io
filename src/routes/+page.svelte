@@ -1,7 +1,5 @@
 <script>
 	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
@@ -10,25 +8,20 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
+	<h1 class="font-mono">
+		<div><strong class="text-sky-50 text-7xl">Hello.</strong></div>
+		<div><strong class="text-7xl text-sky-50">My name is </strong></div>
+		<div class="name leading-[1.25]">
+			<strong class="text-[275px] text-sky-50">Akshay</strong>
+		</div>
+		<canvas id='can'>Not supported.</canvas>
+		
 	</h1>
-
-	<h2 class="text-3xl font-bold underline">
-		<strong>Hello!</strong>
-	</h2>
 
 	<Counter />
 </section>
 
-<style>
+<style lang="postcss">
 	section {
 		display: flex;
 		flex-direction: column;
@@ -40,20 +33,42 @@
 	h1 {
 		width: 100%;
 	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	canvas{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100vw;
+		height: 100vh;
+	}
+	.name {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		border-right: 0.5em solid lightgray; /* The typwriter cursor */
+		white-space: nowrap; /* Keeps the content on a single line */
+		margin: 0 auto;
+		letter-spacing: 0.3em; /* Adjust as needed */
+		animation:
+			typing 1.5s steps(6, end),
+			blink-caret 0.5s step-end infinite;
+	}
+	/* The typing effect */
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	/* The typewriter cursor effect */
+	@keyframes blink-caret {
+		from,
+		to {
+			border-color: transparent;
+		}
+		50% {
+			border-color: lightgray;
+		}
 	}
 </style>
