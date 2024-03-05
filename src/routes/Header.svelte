@@ -12,13 +12,13 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="{base}/" class="text-sky-50 hover:text-sky-500 bold">Home</a>
+				<a href="{base}/" class="text-sky-50 hover:text-sky-500 bold">Contact</a>
 			</li>
 		</ul>
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/Akshay-VK" class="text-sky-50 hover:text-sky-500">
+		<a href="https://github.com/Akshay-VK" class="text-sky-50 font-serif hover:text-sky-500">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
@@ -88,7 +88,6 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 0.5rem;
-		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;

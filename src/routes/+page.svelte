@@ -1,5 +1,5 @@
 <script>
-	import Counter from './Counter.svelte';
+	import { fade } from 'svelte/transition';
 </script>
 
 <svelte:head>
@@ -8,17 +8,12 @@
 </svelte:head>
 
 <section>
-	<h1 class="font-mono">
-		<div><strong class="text-sky-50 text-7xl">Hello.</strong></div>
-		<div><strong class="text-7xl text-sky-50">My name is </strong></div>
-		<div class="name leading-[1.25]">
-			<strong class="text-[275px] text-sky-50">Akshay</strong>
+	<h1 class="font-serif">
+		<div>
+			<strong class="text-sky-50 text-6xl">Karuvathil Akshay Vijaykumar</strong>
 		</div>
-		<canvas id='can'>Not supported.</canvas>
-		
+		<canvas id="can">Not supported.</canvas>
 	</h1>
-
-	<Counter />
 </section>
 
 <style lang="postcss">
@@ -33,7 +28,7 @@
 	h1 {
 		width: 100%;
 	}
-	canvas{
+	canvas {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -41,34 +36,20 @@
 		width: 100vw;
 		height: 100vh;
 	}
-	.name {
-		overflow: hidden; /* Ensures the content is not revealed until the animation */
-		border-right: 0.5em solid lightgray; /* The typwriter cursor */
-		white-space: nowrap; /* Keeps the content on a single line */
-		margin: 0 auto;
-		letter-spacing: 0.3em; /* Adjust as needed */
-		animation:
-			typing 1.5s steps(6, end),
-			blink-caret 0.5s step-end infinite;
-	}
-	/* The typing effect */
-	@keyframes typing {
-		from {
-			width: 0;
-		}
-		to {
-			width: 100%;
-		}
+	h1 {
+		animation: fadeInAnimation ease 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-in;
 	}
 
-	/* The typewriter cursor effect */
-	@keyframes blink-caret {
-		from,
-		to {
-			border-color: transparent;
+	@keyframes fadeInAnimation {
+		0% {
+			opacity: 0;
 		}
-		50% {
-			border-color: lightgray;
+
+		100% {
+			opacity: 1;
 		}
 	}
 </style>
