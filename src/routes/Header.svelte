@@ -28,6 +28,8 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0);
+		backdrop-filter: blur(5px);
 	}
 
 	.corner {

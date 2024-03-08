@@ -77,21 +77,4 @@
 	h1 {
 		width: 100%;
 	}
-	
-	h1 {
-		animation: fadeInAnimation ease 1s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-		animation-timing-function: ease-in;
-	}
-
-	@keyframes fadeInAnimation {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
 </style>
