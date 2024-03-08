@@ -19,10 +19,10 @@
 		let cs: p5.Color[] = [];
 
 		function pattern(p: design) {
-			p5.fill(p.col);
-			p5.stroke(255);
-			// p5.fill(0);
-			// p5.stroke(170);
+			// p5.fill(p.col);
+			// p5.stroke(255);
+			p5.fill(0);
+			p5.stroke(170);
 			p5.strokeWeight(1);
 			p5.beginShape();
 			for (let i = 0; i <= 360; i += 1) {
