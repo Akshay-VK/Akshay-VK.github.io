@@ -1,0 +1,1 @@
+<h1 class="font-serif items-center w-fit text-white">Endeavours</h1>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import P5 from 'p5-svelte';
 	import type p5 from 'p5';
+	import type { Graphics } from 'p5';
 
 	type design = {
 		power: number;
@@ -17,21 +18,23 @@
 		let c = 0;
 		let ps: design[] = [];
 		let cs: p5.Color[] = [];
+		let imgs: p5.Image[] = [];
 
-		function pattern(p: design) {
+		function pattern(p: design, img: Graphics) {
 			// p5.fill(p.col);
 			// p5.stroke(255);
-			p5.fill(0);
-			p5.stroke(170);
-			p5.strokeWeight(1);
-			p5.beginShape();
+			img.fill(0);
+			img.stroke(170);
+			img.strokeWeight(1);
+			img.beginShape();
 			for (let i = 0; i <= 360; i += 1) {
 				let r = f(i, p);
 				let x = r * p5.cos(i);
 				let y = r * p5.sin(i);
-				p5.vertex(x, y);
+				img.vertex(x, y);
 			}
-			p5.endShape(p5.CLOSE);
+			img.endShape(p5.CLOSE);
+			return img;
 		}
 		function t(
 			p: number,
@@ -56,7 +59,7 @@
 		}
 		function f(i: number, p: design) {
 			let a =
-				(p5.pow(p5.sin(i * p.multiplier + p.offset + -c /** p.multiplier*/), p.power) - p.voff) *
+				(p5.pow(p5.sin(i * p.multiplier + p.offset + -c), p.power) - p.voff) *
 					p.size +
 				p.minR;
 			return a;
@@ -74,7 +77,7 @@
 					let p = p5.random() > 0.75 ? 0 : p5.floor(p5.random(1, 5));
 					let off = p5.random() < 0.5 ? 0 : 180 / x;
 					//let s = p5.random(10, 100) / ((i+1));
-					let s = p5.random(10, 100) / (n);
+					let s = p5.random(10, 100) / n;
 					let v = p5.random(0, 1);
 					let mr = p5.random(5, 25) + s + v;
 					MR += mr;
@@ -112,21 +115,32 @@
 			let n = 10;
 			createRangoli(n);
 			console.log(ps);
+			for (let i = 0; i < ps.length; i++) {
+				//console.log(ps[i]);
+				let img = p5.createGraphics(p5.width, p5.height);
+				img.translate(p5.width / 2, p5.height / 2);
+				if (ps[i].bound) {
+					img.circle(0, 0, ps[i].size + ps[i].minR + ps[i].multiplier);
+				}
+				img = pattern(ps[i], img);
+				let IMG = p5.createImage(p5.width, p5.height);
+				IMG.copy(img, 0, 0, img.width, img.height, 0, 0, img.width, img.height);
+				imgs.push(IMG);
+			}
 		};
 
 		p5.draw = () => {
 			p5.background(0);
 			p5.translate(p5.width / 2, p5.height / 2);
-			/*let p = t(5, 0, 50, 100, 10);
-  pattern(p)*/
-			for (let i = 0; i < ps.length; i++) {
+			p5.imageMode(p5.CENTER);
+			for (let i = 0; i < imgs.length; i++) {
 				//console.log(ps[i]);
-				if (ps[i].bound) {
-					p5.circle(0, 0, ps[i].size + ps[i].minR + ps[i].multiplier);
-				}
-				pattern(ps[i]);
+				p5.rotate(c*ps[i].voff);
+				p5.image(imgs[i],0,0)
+				p5.rotate(-c*ps[i].voff);
+				
 			}
-			c += 2;
+			c += 0.1;
 		};
 
 		p5.keyPressed = () => {
