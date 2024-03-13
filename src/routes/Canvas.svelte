@@ -1,4 +1,5 @@
 <script lang="ts">
+ import { fade } from 'svelte/transition';
 	import P5 from 'p5-svelte';
 	import type p5 from 'p5';
 	import type { Graphics } from 'p5';
@@ -155,7 +156,7 @@
 	};
 </script>
 
-<P5 {sketch} />
+<P5 {sketch} transition:fade={{ delay: 250, duration: 300 }}/>
 
 <style>
 	canvas {
