@@ -156,7 +156,9 @@
 	};
 </script>
 
-<P5 {sketch} transition:fade={{ delay: 250, duration: 300 }}/>
+<div transition:fade={{ delay: 250, duration: 300 }}>
+  <P5 {sketch}/>
+</div>
 
 <style>
 	canvas {
