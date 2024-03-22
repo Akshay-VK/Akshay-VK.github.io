@@ -27,7 +27,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/Akshay-VK" class="text-sky-50 font-serif hover:text-sky-500">
+		<a href="https://github.com/Akshay-VK" class="text-sky-50 hover:text-sky-500">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>

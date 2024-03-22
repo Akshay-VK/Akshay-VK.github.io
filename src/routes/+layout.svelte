@@ -17,6 +17,17 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,82.3,100..900,-27&display=swap');
+	*{
+		font-family: "Roboto Serif";
+		font-optical-sizing: auto;
+		font-variation-settings:
+			"wght" 800,
+			"opsz" 100,
+			"ital" 0,
+			"wdth" 50,
+			"GRAD" -50;
+	}
 	.app {
 		display: flex;
 		flex-direction: column;
@@ -32,6 +43,7 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+		background-color: black;
 	}
 
 	footer {

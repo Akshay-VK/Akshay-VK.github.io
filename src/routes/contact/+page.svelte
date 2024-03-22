@@ -1,1 +1,1 @@
-<h1 class="font-serif items-center w-fit text-white">Contact</h1>
+<h1 class="items-center w-fit text-white">Contact</h1>
