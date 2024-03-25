@@ -1,6 +1,6 @@
 <script lang="ts">
-	import img from '$lib/images/picture-of-me.webp';
-	import img_alt from '$lib/images/picture-of-me.jpg';
+	//import img from '/picture-of-me.webp';
+	//import img_alt from '/picture-of-me.jpg';
 	const today = new Date();
 	const months = [
 		'January',
@@ -71,8 +71,8 @@
 			<div>Middle Left</div>
 			<div>
 				<picture class="sepia hover:sepia-0 transition duration-500 w-2/3 contrast-75 hover:contrast-100 border border-black float-left p-1 m-2">
-					<source srcset={img} type="image/webp" />
-					<img src={img_alt} alt="Sup." />
+					<source srcset='/picture-of-me.webp' type="image/webp" />
+					<img src='/picture-of-me.jpg' alt="Sup." />
 				</picture>
 			</div>
 			<div class="text-base body-style">
