@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	//import img from '/picture-of-me.webp';
 	//import img from '$lib/images/picture-of-me.jpg';
 	const today = new Date();
@@ -70,7 +71,7 @@
 		<div class="row-span-7 col-span-3 bg-amber-100 border border-black p-4">
 			<div>Middle Left</div>
 			<div>
-				<img src='/picture-of-me.jpg' alt="Sup."  class="sepia hover:sepia-0 transition duration-500 w-2/3 contrast-75 hover:contrast-100 border border-black float-left p-1 m-2"/>
+				<img src='{base}/picture-of-me.jpg' alt="Sup."  class="sepia hover:sepia-0 transition duration-500 w-2/3 contrast-75 hover:contrast-100 border border-black float-left p-1 m-2"/>
 			</div>
 			<div class="text-base body-style">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ligula.
