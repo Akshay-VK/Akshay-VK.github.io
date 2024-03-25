@@ -91,9 +91,25 @@
 			</div>
 		</div>
 		<div
-			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 hover:z-10 hover:scale-150 origin-top-left hover:bg-rose-500 transition-transform"
+			class="row-span-7 col-span-3 bg-amber-100 focus:bg-red-500 border border-black p-4 hover:z-10 origin-top-left hover:-translate-x-1/3 hover:origin-center hover:scale-125 transition-transform duration-500"
 		>
 			Middle Right
+			<div class="text-base body-style">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ligula.
+				Pellentesque aliquet id orci vel aliquam. Fusce egestas tincidunt lacus, vel gravida enim
+				imperdiet in. Quisque eget rutrum eros. Nullam ac velit sapien. Nulla dignissim justo at
+				massa iaculis dignissim. Integer eleifend semper metus in viverra. Suspendisse tempor in
+				enim vitae finibus. Cras dapibus faucibus varius. In in viverra odio. Donec id tellus eget
+				mauris congue congue. Aliquam erat volutpat. Proin tempor massa vitae sapien maximus, at
+				sagittis nisi porta. Proin eu suscipit mi, ac fringilla metus. Fusce sed urna non felis
+				lobortis venenatis. Integer risus enim, aliquam nec erat vel, maximus auctor velit. Aliquam
+				tincidunt tellus nec tortor lobortis, non eleifend arcu pellentesque. Fusce varius justo at
+				congue convallis. Donec neque quam, placerat id condimentum ut, blandit eu nisi. Etiam
+				pharetra consequat est, ut condimentum neque pellentesque feugiat. Aliquam tellus turpis,
+				mollis vel facilisis vitae, imperdiet vel mauris. Proin sollicitudin purus eget leo
+				hendrerit, quis ultricies metus condimentum. Nunc gravida vitae quam sit amet molestie.
+				Proin eu sodales nunc. Curabitur vehicula facilisis gravida.
+			</div>
 		</div>
 		<div class="row-span-2 col-span-2 bg-amber-100 border border-black p-4">Down Left</div>
 		<div class="col-span-2 row-span-2 bg-amber-100 border border-black p-4">Down Middle</div>
