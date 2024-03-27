@@ -4,7 +4,8 @@
 	import Masthead from './Masthead.svelte';
 	import Section from './Section.svelte';
 	import Image from './Image.svelte';
-	
+	import Link from './Link.svelte';
+
 	onMount(() => {
 		let elem = Array.from(document.querySelectorAll('.bg-amber-100'));
 		elem.shift();
@@ -48,23 +49,27 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class=" text-black grid place-content-center w-full h-5/6 text-4xl origin-top">
+<section class=" text-black grid w-full h-5/6 text-4xl overflow-x-auto">
 	<div
-		class="w-[60rem] h-[75rem] bg-amber-100 grid grid-rows-10 grid-cols-6 grid-flow-row gap-y-1 gap-x-1 justify-items-stretch"
+		class="w-[60rem] aspect-[4/5] bg-amber-100 grid grid-rows-10 grid-cols-6 grid-flow-row gap-y-1 gap-x-1 justify-items-stretch  origin-top-left"
 	>
-		<div class="col-span-6 row-span-1 bg-amber-100 border border-black p-2 grid content-center">
+		<div class="main-heading col-span-6 row-span-1 bg-amber-100 border border-black p-2 grid content-center">
 			<Masthead/>
 		</div>
 		<div
-			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-right"
+			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 overflow-hidden mb-1 dir-right"
 		>
+			<!-- This is how the Section works....divs are used with the slot attribute to define
+			various parts of the main section like the headline, an image of it, the content the article,
+			and deck etc.  -->
 			<Section>
-				<div slot='headline'>Middle Left</div>
+				<div slot='headline'>So..who am I?</div>
+				<div slot='deck'>Well, many things.</div>
 				<div slot='image'><Image src='{base}/picture-of-me.webp'/></div>
 			</Section>
 		</div>
 		<div
-			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-left"
+			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
 		>
 			<Section>
 				<div slot="headline">Middle Right</div>
@@ -83,11 +88,12 @@
 					mollis vel facilisis vitae, imperdiet vel mauris. Proin sollicitudin purus eget leo
 					hendrerit, quis ultricies metus condimentum. Nunc gravida vitae quam sit amet molestie.
 					Proin eu sodales nunc. Curabitur vehicula facilisis gravida.
+					<Link text="Continued on page 2 "/>
 				</div>
 			</Section>
 		</div>
 		<div
-			class="row-span-2 col-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-right"
+			class="row-span-2 col-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 overflow-hidden mb-1 dir-right"
 		>
 			<Section>
 				<div slot='headline'>Down Left</div>
@@ -95,7 +101,7 @@
 			</Section>
 		</div>
 		<div
-			class="col-span-2 row-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500"
+			class="col-span-2 row-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 overflow-hidden mb-1"
 		>
 			<Section>
 				<div slot='headline'>Down Middle</div>
@@ -103,7 +109,7 @@
 			</Section>
 		</div>
 		<div
-			class="col-span-2 row-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-left"
+			class="col-span-2 row-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
 		>
 			<Section>
 				<div slot='headline'>Down Right</div>
@@ -117,5 +123,24 @@
 	.body-style {
 		font-family: 'Times New Roman', Times, serif;
 		text-align: justify;
+	}
+	/* custom scrollbar */
+	::-webkit-scrollbar {
+		width: 20px;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #969b9c;
+		border-radius: 20px;
+		border: 6px solid transparent;
+		background-clip: content-box;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: #a8bbbf;
 	}
 </style>

@@ -1,8 +1,11 @@
-<div>
+<div class="headline">
     <slot name='headline'>No headline provided.</slot>
 </div>
 <div>
     <slot name='image'></slot>
+</div>
+<div class="deck text-3xl pt-2 pb-2">
+    <slot name='deck'></slot>
 </div>
 <div class="text-lg body-style">
     <slot name='content'>
@@ -27,5 +30,25 @@
 	.body-style {
 		font-family: 'Times New Roman', Times, serif;
 		text-align: justify;
+	}
+    .headline{
+		font-family: "Roboto Serif";
+		font-optical-sizing: auto;
+		font-variation-settings:
+			"wght" 600,
+			"opsz" 100,
+			"ital" 0,
+			"wdth" 50,
+			"GRAD" 80;
+	}
+    .deck{
+		font-family: "Roboto Serif";
+		font-optical-sizing: auto;
+		font-variation-settings:
+			"wght" 100,
+			"opsz" 100,
+			"ital" 0,
+			"wdth" 50,
+			"GRAD" 80;
 	}
 </style>
