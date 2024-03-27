@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
 	//import img from '/picture-of-me.webp';
 	//import img from '$lib/images/picture-of-me.jpg';
@@ -45,6 +46,44 @@
 		', ' +
 		year
 	).toUpperCase();
+
+	let expandedElement=null;
+	onMount(() => {
+		let elem = Array.from(document.querySelectorAll('.bg-amber-100'));
+		elem.shift();
+		elem.shift();
+		console.log(elem);
+		let elementMap=new Map();
+		elem.forEach((element) => {
+			let classes = ['z-10', 'scale-125'];
+			/*
+				if the element has dir-right( elements on the left should have it), then it will translate in the right direction on click
+				and vice versa for dir-left and the respective classes get added to the classlist of the elemnt.
+			*/
+			if (element.classList.contains('dir-right')) {
+				classes.push('translate-x-1/3');
+			} else if (element.classList.contains('dir-left')) {
+				classes.push('-translate-x-1/3');
+			}
+			elementMap.set(element,classes);
+			classes.forEach((cl) => {
+				element.classList.remove(cl);
+			});
+			element.addEventListener('click', () => {
+				for (let clicked of elem) {
+					if(clicked===element){
+						elementMap.get(clicked).forEach((cl: string) => {
+							clicked.classList.toggle(cl);
+						});
+					}else{
+						elementMap.get(clicked).forEach((cl: string) => {
+							clicked.classList.remove(cl);
+						});
+					}
+				}
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -54,26 +93,32 @@
 
 <section class=" text-black grid place-content-center w-full h-5/6 text-4xl origin-top">
 	<div
-		class="w-[60rem] h-[75rem] bg-amber-100 grid grid-rows-10 grid-cols-6 grid-flow-row gap-y-4 gap-x-1 justify-items-stretch"
+		class="w-[60rem] h-[75rem] bg-amber-100 grid grid-rows-10 grid-cols-6 grid-flow-row gap-y-1 gap-x-1 justify-items-stretch"
 	>
 		<div class="col-span-6 row-span-1 bg-amber-100 border border-black p-2 grid content-center">
 			<div class="text-xs text-center font-serif underline">
 				KARUVATHIL AKSHAY VIJAYKUMAR&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;ESTABLISHED
 				2024&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;ENGLISH&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;PRICE:
-				FREE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;PAGES 5&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{when}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;BENGALURU,
+				FREE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;PAGES 5&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{when}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;BENGALURU,
 				INDIA
 			</div>
 			<div class="text-center text-6xl">KARUVATHIL AKSHAY VIJAYKUMAR</div>
-			<div class="text-xs text-center font-serif text-gray-500">
+			<div class="text-xs text-center font-serif text-gray-800">
 				Inclusive of About Me | My Achievements | My Cocurriculars | My Accolades | My Ambition
 			</div>
 		</div>
-		<div class="row-span-7 col-span-3 bg-amber-100 border border-black p-4">
+		<div
+			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-right"
+		>
 			<div>Middle Left</div>
 			<div>
-				<img src='{base}/picture-of-me.jpg' alt="Sup."  class="sepia hover:sepia-0 transition duration-500 w-2/3 contrast-75 hover:contrast-100 border border-black float-left p-1 m-2"/>
+				<img
+					src="{base}/picture-of-me.webp"
+					alt="Sup."
+					class="sepia hover:sepia-0 transition duration-500 w-2/3 contrast-75 hover:contrast-100 border border-black float-left p-1 m-2"
+				/>
 			</div>
-			<div class="text-base body-style">
+			<div class="text-lg body-style">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ligula.
 				Pellentesque aliquet id orci vel aliquam. Fusce egestas tincidunt lacus, vel gravida enim
 				imperdiet in. Quisque eget rutrum eros. Nullam ac velit sapien. Nulla dignissim justo at
@@ -91,10 +136,10 @@
 			</div>
 		</div>
 		<div
-			class="row-span-7 col-span-3 bg-amber-100 focus:bg-red-500 border border-black p-4 hover:z-10 origin-top-left hover:-translate-x-1/3 hover:origin-center hover:scale-125 transition-transform duration-500"
+			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-left"
 		>
 			Middle Right
-			<div class="text-base body-style">
+			<div class="text-lg body-style">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ligula.
 				Pellentesque aliquet id orci vel aliquam. Fusce egestas tincidunt lacus, vel gravida enim
 				imperdiet in. Quisque eget rutrum eros. Nullam ac velit sapien. Nulla dignissim justo at
@@ -111,14 +156,27 @@
 				Proin eu sodales nunc. Curabitur vehicula facilisis gravida.
 			</div>
 		</div>
-		<div class="row-span-2 col-span-2 bg-amber-100 border border-black p-4">Down Left</div>
-		<div class="col-span-2 row-span-2 bg-amber-100 border border-black p-4">Down Middle</div>
-		<div class="col-span-2 row-span-2 bg-amber-100 border border-black p-4">Down Right</div>
+		<div
+			class="row-span-2 col-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-right"
+		>
+			Down Left
+		</div>
+		<div
+			class="col-span-2 row-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500"
+		>
+			Down Middle
+		</div>
+		<div
+			class="col-span-2 row-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 dir-left"
+		>
+			Down Right
+		</div>
 	</div>
 </section>
 
 <style lang="postcss">
 	.body-style {
 		font-family: 'Times New Roman', Times, serif;
+		text-align: justify;
 	}
 </style>
