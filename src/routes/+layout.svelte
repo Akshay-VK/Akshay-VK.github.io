@@ -15,7 +15,7 @@
 </div>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,82.3,100..900,-27&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Roboto+Flex:opsz,wdth,wght@8..144,40,450&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,82.3,100..900,-27&display=swap');
 	* {
 		font-family: 'Roboto Serif';
 		font-optical-sizing: auto;

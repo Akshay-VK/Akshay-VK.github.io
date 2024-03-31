@@ -5,6 +5,7 @@
 	import Section from './Section.svelte';
 	import Image from './Image.svelte';
 	import Link from './Link.svelte';
+	import Headline from './Headline.svelte';
 
 	onMount(() => {
 		let elem = Array.from(document.querySelectorAll('.bg-amber-100'));
@@ -56,8 +57,11 @@
 		<div class="main-heading col-span-6 row-span-1 bg-amber-100 border border-black p-2 grid content-center">
 			<Masthead/>
 		</div>
+		<div class="main-heading col-span-6 row-span-1 border p-2 grid content-center transition-transform duration-500">
+			<Headline>FROM PIXELS TO PLANETS, HERE'S MY STORY</Headline>
+		</div>
 		<div
-			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 overflow-hidden mb-1 dir-right"
+			class="row-span-6 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500 overflow-hidden mb-1 dir-right"
 		>
 			<!-- This is how the Section works....divs are used with the slot attribute to define
 			various parts of the main section like the headline, an image of it, the content the article,
@@ -69,7 +73,7 @@
 			</Section>
 		</div>
 		<div
-			class="row-span-7 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
+			class="row-span-6 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
 		>
 			<Section>
 				<div slot="headline">Middle Right</div>
