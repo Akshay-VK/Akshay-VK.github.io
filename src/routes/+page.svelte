@@ -76,7 +76,7 @@
 			class="row-span-6 col-span-3 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
 		>
 			<Section>
-				<div slot="headline">Middle Right</div>
+				<div slot="headline">In the spotlight</div>
 				<div slot="content">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ligula.
 					Pellentesque aliquet id orci vel aliquam. Fusce egestas tincidunt lacus, vel gravida enim
