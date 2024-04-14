@@ -10,7 +10,7 @@
 	</div>
 
 	<nav>
-		<ul>
+		<!-- <ul>
 			<li>
 				<a href="{base}/" class="text-sky-50 hover:text-sky-500 bold">Home</a>
 			</li>
@@ -23,7 +23,8 @@
 			<li>
 				<a href="{base}/endeavours" class="text-sky-50 hover:text-sky-500 bold">Endeavours</a>
 			</li>
-		</ul>
+		</ul> -->
+		<div class="text-amber-50 hover:text-amber-200 bold">Karuvathil Akshay Vijaykumar</div>
 	</nav>
 
 	<div class="corner">
