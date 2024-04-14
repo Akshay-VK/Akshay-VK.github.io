@@ -71,7 +71,7 @@
 				<div slot='headline'>So..who am I?</div>
 				<div slot="content">
 					Lorem ipsum dolor sit amet
-					<Link text="Continued on page 2 "/>
+					<Link text="Continued on page 2 " to="/about"/>
 				</div>
 				<div slot='deck'>Well, many things.</div>
 				<div slot='image'><Image src='{base}/picture-of-me.webp'/></div>
@@ -84,7 +84,6 @@
 				<div slot="headline">In the spotlight</div>
 				<div slot="content">
 					Lorem ipsum dolor sit amet
-					<Link text="Continued on page 2 "/>
 				</div>
 			</Section>
 		</div>
@@ -93,7 +92,9 @@
 		>
 			<Section>
 				<div slot='headline'>Featured projects</div>
-				<div slot='content'></div>
+				<div slot='content'>
+					<Link text="Continued on page 3 " to="/projects"/>
+				</div>
 			</Section>
 		</div>
 		<div
@@ -101,23 +102,36 @@
 		>
 			<Section>
 				<div slot='headline'>Timeline of success</div>
-				<div slot='content'></div>
+				<div slot='content'>
+					<Link text="Continued on page 4 " to="/timeline"/>
+				</div>
 			</Section>
 		</div>
 		<div
-			class="col-span-4 row-span-5 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
+			class="col-span-4 row-span-6 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
 		>
 			<Section>
 				<div slot='headline'>Skills and experience</div>
-				<div slot='content'>Yea. I must say, this works pretty well. Love it.</div>
+				<div slot='content'>
+					Yea. I must say, this works pretty well. Love it.
+					<Link text="Continued on page 5 " to="/skillsandexperience"/>
+				</div>
 			</Section>
 		</div>
 		<div
-			class="col-span-4 row-span-5 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
+			class="col-span-4 row-span-4 bg-amber-100 border border-black p-4 transition-transform duration-500  overflow-hidden mb-1 dir-left"
 		>
 			<Section>
 				<div slot='headline'>Beyond academics</div>
-				<div slot='content'>Yea. I must say, this works pretty well. Love it.</div>
+				<div slot='content'>
+					<ul class="list-disc pl-2">
+						<li>I am pretty good at swimming, badminton and volleyball and have kept developing my skills in these ever since I learnt them.</li>
+						<li>I have a big interest in creative coding and have made many simulations using many algorithms such as Diffusion Aggregated Simulation and I also made a ray tracing engine.</li>
+						<li>I am a keen reader with an interest in fantasy novels set in huge worlds like the Game of Thrones, Percy Jackson.</li>
+						<li>I also love puzzles like Rubik's cubes and have quite a collection of them.</li>
+					</ul>
+					<Link text="Continued on page 6 " to="/beyondacademics"/>
+				</div>
 			</Section>
 		</div>
 		<div

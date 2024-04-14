@@ -7,7 +7,7 @@
 <div class="deck text-3xl pt-2 pb-2">
     <slot name='deck'></slot>
 </div>
-<div class="text-lg body-style">
+<div class="text-base body-style">
     <slot name='content'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ligula.
         Pellentesque aliquet id orci vel aliquam. Fusce egestas tincidunt lacus, vel gravida enim
