@@ -8,8 +8,8 @@
 [ ]"In the Spotlight" - This can be your main "article." Briefly highlight your most notable achievements or projects.
 [ ]"Skills & Experience" - List your key skills and areas of experience. You can use bullet points or a short paragraph for each.
 [ ]"Timeline of Success" (visual) - Create a vertical timeline that tracks your achievements throughout your academic career. Include milestones, awards, projects, or other significant events.
-[ ]"Featured Project" - Choose a project you're particularly proud of and write a short article describing it. Include visuals like drawings, photos, or diagrams.
-[ ]"Beyond Academics" (optional) - Briefly mention any extracurricular activities, hobbies, or volunteer work that showcase your well-roundedness.
+[X]"Featured Project" - Choose a project you're particularly proud of and write a short article describing it. Include visuals like drawings, photos, or diagrams.
+[✅]"Beyond Academics" (optional) - Briefly mention any extracurricular activities, hobbies, or volunteer work that showcase your well-roundedness.
 [ ]"Looking Forward" (by you) - A short paragraph about your future aspirations and goals.
 Additional Ideas:
 
@@ -23,3 +23,21 @@ Additional Ideas:
 [ ]Maintain a consistent and professional design throughout.
 [ ]Ensure good quality for any visuals you include.
 [ ]This is a flexible layout, so feel free to adjust the sections and content to best represent your unique journey!
+
+finished projects:
+
+- this portfolio
+- ray tracer with processing
+- ant simulation with processing
+- particle life
+- feynman internship
+- blender
+- long exposure video
+- godot platformer
+- mobile cctv
+
+ongoing projects:
+
+- game engine in monogame
+- e-resources sharing app(mynerva)
+- 2d exploration game(in concept)

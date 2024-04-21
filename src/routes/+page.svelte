@@ -84,6 +84,7 @@
 				<div slot="headline">In the spotlight</div>
 				<div slot="content">
 					Lorem ipsum dolor sit amet
+					<Link text="Continued on page 3 " to="/projects"/>
 				</div>
 			</Section>
 		</div>
@@ -91,9 +92,9 @@
 			class="row-span-10 col-span-2 bg-amber-100 border border-black p-4 transition-transform duration-500 overflow-hidden mb-1 dir-right"
 		>
 			<Section>
-				<div slot='headline'>Featured projects</div>
+				<div slot='headline'>Looking forward</div>
 				<div slot='content'>
-					<Link text="Continued on page 3 " to="/projects"/>
+					Blha blah
 				</div>
 			</Section>
 		</div>
@@ -139,7 +140,7 @@
 		>
 			<Section>
 				<div slot='headline'>Contact</div>
-				<div slot='content'>Hey! You can reach me with my gmail id <span class="font-bold italic hover:underline">akshaykaruvathil@gmail.com</span></div>
+				<div slot='content'>Hey! You can reach me at my Gmail <span class="font-bold italic hover:underline">akshaykaruvathil@gmail.com</span></div>
 			</Section>
 		</div>
 	</div>

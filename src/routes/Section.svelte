@@ -35,11 +35,11 @@
 		font-family: "Roboto Serif";
 		font-optical-sizing: auto;
 		font-variation-settings:
-			"wght" 600,
+			"wght" 700,
 			"opsz" 100,
 			"ital" 0,
 			"wdth" 50,
-			"GRAD" 80;
+			"GRAD" 10;
 	}
     .deck{
 		font-family: "Roboto Serif";
